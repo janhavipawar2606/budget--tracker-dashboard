@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="dashboard">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-wallet"></i>
+                <h2>MyBudget</h2>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">
+                    <i class="fa-solid fa-house"></i> Dashboard
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-chart-line"></i> Analytics
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-money-bill-transfer"></i> Transactions
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-piggy-bank"></i> Savings
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-gear"></i> Settings
+                </a>
+            </nav>
+            <div class="user-profile">
+                <img src="https://i.pravatar.cc/50" alt="User">
+                <div>
+                    <h4>Rahul Sharma</h4>
+                    <p>Premium User</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <!-- Header -->
+            <header class="header">
+                <div>
+                    <h1>Welcome Back, Rahul! 👋</h1>
+                    <p>Here's your financial overview for October 2025</p>
+                </div>
+                <button class="add-btn" onclick="openModal()">
+                    <i class="fa-solid fa-plus"></i> Add Transaction
+                </button>
+            </header>
+
+            <!-- Add Transaction Modal -->
+            <div class="modal" id="modal">
+                <div class="modal-content">
+                    <h3>Add New Transaction</h3>
+                    <input type="text" id="transName" placeholder="Transaction Name (e.g., Groceries)">
+                    <input type="number" id="transAmount" placeholder="Amount (in ₹)">
+                    <select id="transType">
+                        <option value="income">Income 💰</option>
+                        <option value="expense">Expense 💸</option>
+                    </select>
+                    <div class="modal-buttons">
+                        <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+                        <button class="btn-save" onclick="addTransaction()">Save</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Cards -->
+            <section class="summary-cards">
+                <div class="card income">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                    </div>
+                    <div class="card-info">
+                        <p>Total Income</p>
+                        <h2>₹75,000</h2>
+                        <span class="trend up">↑ 12% this month</span>
+                    </div>
+                </div>
+
+                <div class="card expense">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-arrow-trend-down"></i>
+                    </div>
+                    <div class="card-info">
+                        <p>Total Expenses</p>
+                        <h2>₹42,500</h2>
+                        <span class="trend down">↓ 5% this month</span>
+                    </div>
+                </div>
+
+                <div class="card savings">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-piggy-bank"></i>
+                    </div>
+                    <div class="card-info">
+                        <p>Total Savings</p>
+                        <h2>₹32,500</h2>
+                        <span class="trend up">↑ 18% this month</span>
+                    </div>
+                </div>
+
+                <div class="card balance">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <div class="card-info">
+                        <p>Balance</p>
+                        <h2>₹1,25,000</h2>
+                        <span class="trend up">↑ 8% this month</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Budget Categories & Transactions -->
+            <section class="content-grid">
+                
+                <!-- Budget Categories -->
+                <div class="budget-section">
+                    <h3>Budget Categories</h3>
+                    
+                    <div class="budget-item">
+                        <div class="budget-info">
+                            <span><i class="fa-solid fa-utensils"></i> Food & Dining</span>
+                            <span>₹6,000 / ₹8,000</span>
